@@ -33,7 +33,8 @@ if (is.null(opt$output_file_prefix)) {
     quit(status=1)
 }
 
-
+# Define the appended filename
+method_str <- "DoubletCells_filtered"
 
 # Import counts as a data.frame
 cnts <- read.table(
@@ -66,7 +67,7 @@ df.doublets <- data.frame(
 )
 
 # Export doublet classification to file
-doublet_filename <- paste(opt$doublet_file_prefix, contrast_str, 'tsv', sep='.')
+doublet_filename <- paste(opt$doublet_file_prefix, method_str, 'tsv', sep='.')
 write.table(
     df.doublets,
     doublet_filename,
@@ -84,7 +85,7 @@ sce.sub <- subsetSCECols(
 # Export count matrix to file
 output_cnts <- data.frame(as.matrix(counts(sce.sub)))
 rownames(output_cnts) <- rownames(counts(sce.sub))
-output_filename <- paste(opt$output_file_prefix, contrast_str, 'tsv', sep='.')
+output_filename <- paste(opt$output_file_prefix, method_str, 'tsv', sep='.')
 write.table(
     output_cnts,
     output_filename,
