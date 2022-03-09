@@ -22,6 +22,7 @@
             }
         },
         "SctkDoubletCells.doublet_ids": {
+            "required": true,
             "spec": {
                 "attribute_type": "DataResource", 
                 "resource_type": "FT",
