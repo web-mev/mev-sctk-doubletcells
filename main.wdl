@@ -35,7 +35,7 @@ task runDoubletCells {
     }
 
     runtime {
-        docker: "hsphqbrc/mev-sctk-doubletcells"
+        docker: "ghcr.io/web-mev/mev-sctk-doubletcells"
         cpu: 2
         memory: "16 G"
         disks: "local-disk " + disk_size + " HDD"
