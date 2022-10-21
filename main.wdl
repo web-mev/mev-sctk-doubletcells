@@ -39,6 +39,5 @@ task runDoubletCells {
         cpu: 2
         memory: "16 G"
         disks: "local-disk " + disk_size + " HDD"
-        preemptible: 0
     }
 }
