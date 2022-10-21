@@ -9,11 +9,6 @@ To use, simply fill in the the `inputs.json` with the path to the single-cell co
 Alternatively (if you do not want to use Cromwell), you can pull the docker image (https://github.com/web-mev/mev-sctk-doubletcells/pkgs/container/mev-sctk-doubletcells), start the container, and run: 
 
 ```
-Rscript /opt/software/sctk_dimreduce.R \
-    <path to raw counts tab-delimited file> \
-    <number of PCA dimensions, as integer> \
-    <path to output filename>
-
 Rscript /opt/software/doubletcells_qc.R \
     -f <path to raw counts tab-delimited file> \
     -o <prefix (string) for the subsetted count matrix filename> \
